@@ -1,17 +1,26 @@
 import React from "react";
+import Badge from "./Badge";
 
-function Card() {
+interface Props {
+  photographer: string;
+  imageUrl: string;
+  id: number;
+  category: string;
+  imageAlt: string;
+}
+
+function Card(props: Props) {
   return (
-    <div className="card">
-      <img className="card-img-top" src="..." alt="Card image cap" />
+    <div className="card col-md-2 m-2">
+      <img
+        className="card-img-top img-fluid"
+        src={props.imageUrl}
+        alt={props.imageAlt}
+      />
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
+        <h5 className="card-title">{props.photographer}</h5>
         <p className="card-text">
-          This is a longer card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
-        </p>
-        <p className="card-text">
-          <small className="text-muted">Last updated 3 mins ago</small>
+          <Badge text={props.category} type="bg-secondary" />
         </p>
       </div>
     </div>
