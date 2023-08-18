@@ -7,14 +7,12 @@ interface Props {
 
 function Search(props: Props) {
   return (
-    <>
-      <input
-        onChange={props.handleSearch}
-        type="search"
-        className="form-control"
-        placeholder={props.placeHolder}
-      />
-    </>
+    <input
+      onChange={props.handleSearch}
+      type="search"
+      className="form-control"
+      placeholder={props.placeHolder}
+    />
   );
 }
 
